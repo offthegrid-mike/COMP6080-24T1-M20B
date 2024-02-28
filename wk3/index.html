@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function nameChanged() {
+            const name = document.getElementById("name").value;
+            document.getElementById("subject").innerText = name;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label>Name: </label>
+        <!-- <span id="name">Mike</span> -->
+        <input id="name" onchange="nameChanged()">
+    </div>
+    <div>
+        Hi <span id="subject"></span>, welcome to COMP6080
+    </div>
+</body>
+<footer>
+</footer>
+</html>
