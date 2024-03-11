@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onCalcClick() {
+            const num1_value = document.getElementById("num-1").value;
+            const num2_value = document.getElementById("num-2").value;
+            const result_value = parseInt(num1_value) + parseInt(num2_value);
+            document.querySelector(".result-container").innerText = `${num1_value} + ${num2_value} = ${result_value}`;
+        }
+
+        function onSaveClick() {
+            const num1_value = document.getElementById("num-1").value;
+            const num2_value = document.getElementById("num-2").value;
+            localStorage.setItem("num-1", num1_value);
+            localStorage.setItem("num-2", num2_value);
+        }
+
+        const onRestoreClick = () => {
+            const num1_value = localStorage.getItem("num-1");
+            const num2_value = localStorage.getItem("num-2");
+            document.getElementById("num-1").value = num1_value;
+            document.getElementById("num-2").value = num2_value;
+            onCalcClick();
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>Enter two number</h1>
+    <div class="container">
+        <input id="num-1">
+        <input id="num-2">
+    </div>
+    <button onclick="onCalcClick()">Calculate</button>
+    <button onclick="onSaveClick()">Save</button>
+    <button onclick="onRestoreClick()">Restore</button>
+    <div class="result-container"></div>
+</body>
+</html>
